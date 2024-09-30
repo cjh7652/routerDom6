@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+import Header from './components/Header.js';
+import {Routes, Route} from 'react-router-dom';
+import Home from './pages/Home.js';
+import Homes from './pages/Homes.js';
+import Store from './pages/Store.js';
+import Scm from './pages/Scm.js';
+import CustomerCare from './pages/CustomerCare.js';
+import Cooperation from './pages/Cooperation.js';
+import Company from './pages/Company.js';
+import BookSearch from './pages/BookSearch.js';
+import Footer from './components/Footer.js'
+import './scss/common.scss';
+ 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+		<Header />
+		<Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/homes/:id" element={<Homes />} />
+			<Route path="/store" element={<Store />} />
+			<Route path="/scm" element={<Scm />} />
+			<Route path="/customercare" element={<CustomerCare />} />
+			<Route path="/cooperation" element={<Cooperation />} />
+			<Route path="/company" element={<Company />} />
+			<Route path="/booksearch" element={<BookSearch />} />
+		</Routes>
+		<Footer/>
     </div>
   );
 }
